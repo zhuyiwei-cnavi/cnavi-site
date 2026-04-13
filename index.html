@@ -11,6 +11,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
       background: #f7f8fc;
@@ -34,7 +38,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #eee;
     }
@@ -230,6 +234,7 @@
       color: #6366f1;
       margin-bottom: 10px;
       letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
     .section-head h2 {
@@ -242,7 +247,7 @@
     .section-head p {
       font-size: 16px;
       color: #64748b;
-      max-width: 760px;
+      max-width: 900px;
     }
 
     .cards-3 {
@@ -290,7 +295,7 @@
 
     .course-wrap {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
@@ -300,6 +305,24 @@
       padding: 32px;
       border: 1px solid #e8edf3;
       box-shadow: 0 14px 40px rgba(15, 23, 42, 0.05);
+      position: relative;
+    }
+
+    .course-card.featured {
+      border: 2px solid #111827;
+      transform: translateY(-4px);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: #111827;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 8px 12px;
+      border-radius: 999px;
     }
 
     .course-label {
@@ -319,6 +342,27 @@
       color: #0f172a;
     }
 
+    .course-meta {
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .course-price {
+      font-size: 34px;
+      font-weight: 900;
+      color: #111827;
+      margin-bottom: 16px;
+    }
+
+    .course-price span {
+      font-size: 15px;
+      color: #64748b;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
     .course-card p {
       font-size: 15px;
       color: #64748b;
@@ -329,6 +373,7 @@
       list-style: none;
       display: grid;
       gap: 12px;
+      margin-bottom: 20px;
     }
 
     .course-card li {
@@ -338,6 +383,53 @@
       padding: 14px 16px;
       color: #334155;
       font-size: 14px;
+    }
+
+    .course-guarantee {
+      background: #111827;
+      color: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .benefit-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 28px;
+      border: 1px solid #edf1f5;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .benefit-card .num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #111827;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .benefit-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .benefit-card p {
+      color: #64748b;
+      font-size: 15px;
     }
 
     .bg-dark {
@@ -456,7 +548,8 @@
       .hero-wrap,
       .cards-3,
       .course-wrap,
-      .steps {
+      .steps,
+      .benefit-grid {
         grid-template-columns: 1fr;
       }
 
@@ -475,6 +568,10 @@
       .cta-box h2 {
         font-size: 30px;
       }
+
+      .hero-card .mini-box {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -482,13 +579,14 @@
 
   <header>
     <div class="container nav">
-      <div class="logo">CNavi TikTok Campus</div>
+      <div class="logo">CNavi TikTok Shop Campus</div>
       <nav class="nav-links">
         <a href="#about">Campusとは</a>
         <a href="#courses">コース内容</a>
+        <a href="#benefits">特典・強み</a>
         <a href="#flow">流れ</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-cta">無料説明会に申し込む</a>
+        <a href="#contact" class="nav-cta" style="color: white;">無料説明会に申し込む</a>
       </nav>
     </div>
   </header>
@@ -524,7 +622,7 @@
         </ul>
         <div class="mini-box">
           <div class="mini-item">
-            <strong>2</strong>
+            <strong>3</strong>
             コース構成
           </div>
           <div class="mini-item">
@@ -578,34 +676,129 @@
         <div class="eyebrow">COURSES</div>
         <h2>コース内容</h2>
         <p>
-          基礎からスタートし、実践へ進む2段階構成。
-          学ぶだけで終わらず、「実際に売る経験」までつなげることを重視しています。
+          START・PRO・CAREER保証の3段階構成。理論理解から実践、さらに案件機会まで、一歩ずつ収益化へつなげます。
         </p>
       </div>
 
       <div class="course-wrap">
         <div class="course-card">
-          <div class="course-label">LEVEL 1</div>
-          <h3>ベーシックコース</h3>
-          <p>ライブコマースの土台をつくる基礎コースです。</p>
+          <div class="course-label">START</div>
+          <h3>スタートコース</h3>
+          <div class="course-meta">DAY 1 / 入門向け</div>
+          <div class="course-price">30,000円<span>/ 1日</span></div>
+          <p>ライブコマースの基礎を短期間で学び、「まず配信できる状態」を目指す入門コースです。</p>
           <ul>
-            <li>ライブ配信の基本理解</li>
-            <li>視聴者を惹きつける話し方</li>
-            <li>商品理解と見せ方</li>
-            <li>TikTok的な表現・空気感の理解</li>
+            <li>ライブコマース理論・EC基礎</li>
+            <li>TikTok Shop日本市場の構造理解</li>
+            <li>日本ルール・NGワード・コンプライアンス</li>
+            <li>DAY1にインフルエンサーとの交流会あり</li>
           </ul>
+          <div class="course-guarantee">
+            受講特典：5時間の配信機会保証（時給1,400円）
+          </div>
+        </div>
+
+        <div class="course-card featured">
+          <div class="popular-badge">おすすめ</div>
+          <div class="course-label">PRO</div>
+          <h3>プロコース</h3>
+          <div class="course-meta">DAY 1-2 / 実践強化</div>
+          <div class="course-price">80,000円<span>/ 2日</span></div>
+          <p>配信スキル・販売スキルを強化し、実際に「売れる人材」になるための実践コースです。</p>
+          <ul>
+            <li>商品紹介・ユーザーニーズ分析</li>
+            <li>信頼構築・場回し・特典誘導設計</li>
+            <li>模擬ライブ＋講師フィードバック</li>
+            <li>現役ライバーの助播として現場参加可能</li>
+          </ul>
+          <div class="course-guarantee">
+            受講特典：10時間の配信機会保証（時給1,400円）
+          </div>
         </div>
 
         <div class="course-card">
-          <div class="course-label">LEVEL 2</div>
-          <h3>実践コース</h3>
-          <p>実際の商品・案件を通じて、販売力を高める実践型コースです。</p>
+          <div class="course-label">CAREER保証</div>
+          <h3>キャリア保証コース</h3>
+          <div class="course-meta">DAY 1-3 / 案件保証</div>
+          <div class="course-price">380,000円<span>/ 3日</span></div>
+          <p>本気でライブ配信を仕事にしたい方向け。実案件・商材提供・配信機会保証まで含む最上位コースです。</p>
           <ul>
-            <li>実商品の販売練習</li>
-            <li>企業との案件参加機会</li>
-            <li>配信改善フィードバック</li>
-            <li>収益化に向けた実務感覚の習得</li>
+            <li>企業・メーカーとの案件導線</li>
+            <li>販売可能な商品の契約機会保証</li>
+            <li>報酬発生型案件の提供保証</li>
+            <li>収益化まで見据えた実践支援</li>
           </ul>
+          <div class="course-guarantee">
+            受講特典：20時間の配信機会保証（時給1,400円）
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">BENEFITS</div>
+        <h2>この講座だけの特典・強み</h2>
+        <p>
+          他では手に入らないCNavi独自の商材・配信環境・案件機会をまとめて提供。学ぶだけで終わらず、実際に収益化までつなげます。
+        </p>
+      </div>
+
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <div class="num">01</div>
+          <h3>独占商材の提供</h3>
+          <p>
+            CNaviはBtoBで多くの企業と連携しており、個人では扱いにくい大手ブランド商材も提供可能。
+            「売るものがない」状態から始める必要がありません。
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="num">02</div>
+          <h3>配信環境フル提供</h3>
+          <p>
+            受講後は、ライブ配信スタジオ・配信機材・照明・必要設備まで利用可能。
+            初期投資を抑えたまま、実践的な配信経験を積めます。
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="num">03</div>
+          <h3>配信機会を保証</h3>
+          <p>
+            受講するだけで終わらず、実際にCNaviの現場で配信できる機会を保証。
+            STARTは5時間、PROは10時間、CAREER保証は20時間の配信機会があります。
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="num">04</div>
+          <h3>時給＋インセンティブ</h3>
+          <p>
+            保証配信時間はすべて時給1,400円で支給。
+            さらにライブで発生した売上はインセンティブ計算となるため、成果次第では受講費の回収も十分可能です。
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="num">05</div>
+          <h3>現役ライバーの現場に入れる</h3>
+          <p>
+            受講者は既存ライバーと一緒にライブに入り、助播として現場経験を積むことも可能。
+            教室では学べないリアルな配信運営を体感できます。
+          </p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="num">06</div>
+          <h3>DAY1は特別交流会あり</h3>
+          <p>
+            各DAY1の講座では、インフルエンサーや人気配信者が参加し、実体験ベースのノウハウを共有。
+            教科書だけでは学べない「現場の勝ち方」に触れられます。
+          </p>
         </div>
       </div>
     </div>
@@ -616,10 +809,7 @@
       <div class="section-head">
         <div class="eyebrow">FLOW</div>
         <h2>参加から実践までの流れ</h2>
-        <p>
-          エントリーからスタートし、基礎学習、実践参加、そして案件機会へ。
-          わかりやすいステップで進めます。
-        </p>
+        <p>エントリーからスタートし、基礎学習、実践参加、そして案件機会へ。わかりやすいステップで進めます。</p>
       </div>
 
       <div class="steps">
@@ -671,9 +861,9 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">すぐに案件に参加できますか？ <span>＋</span></button>
+          <button class="faq-question">配信経験がなくても、本当に仕事につながりますか？ <span>＋</span></button>
           <div class="faq-answer">
-            参加状況や習熟度によります。まずは基礎と実践を通して、一定の基準を満たした方に機会をご案内します。
+            本講座は「学んで終わり」ではなく、受講後の配信機会そのものを保証している点が大きな特徴です。コースごとに保証時間が設定されています。
           </div>
         </div>
 
@@ -681,6 +871,13 @@
           <button class="faq-question">説明会は無料ですか？ <span>＋</span></button>
           <div class="faq-answer">
             はい、無料です。まずは説明会で全体像を確認してからご検討いただけます。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">受講費を回収できる可能性はありますか？ <span>＋</span></button>
+          <div class="faq-answer">
+            はい。時給保証に加えて売上インセンティブもあるため、成果次第では受講費以上のリターンを得ることも可能です。
           </div>
         </div>
       </div>
