@@ -27,9 +27,14 @@
       color: inherit;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       width: 100%;
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -39,21 +44,36 @@
       top: 0;
       z-index: 100;
       background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eee;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e9edf3;
     }
 
     .nav {
-      height: 72px;
+      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-size: 22px;
       font-weight: 800;
       color: #111827;
+      min-width: 0;
+    }
+
+    .logo-img {
+      height: 42px;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .logo span {
+      white-space: nowrap;
     }
 
     .nav-links {
@@ -65,31 +85,42 @@
     .nav-links a {
       font-size: 14px;
       color: #333;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #111827;
+      transform: translateY(-1px);
     }
 
     .nav-cta {
-      background: #111827;
-      color: #fff;
+      background: #0f172a;
+      color: #fff !important;
       padding: 12px 18px;
       border-radius: 999px;
       font-size: 14px;
       font-weight: 700;
-      transition: 0.2s;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
     }
 
     .nav-cta:hover {
-      opacity: 0.88;
+      transform: translateY(-2px);
+      opacity: 0.95;
+      box-shadow: 0 16px 28px rgba(15, 23, 42, 0.2);
     }
 
     .hero {
-      padding: 72px 0 56px;
-      background: linear-gradient(135deg, #eef2ff 0%, #ffffff 48%, #f8fafc 100%);
+      padding: 72px 0 64px;
+      background:
+        radial-gradient(circle at top left, rgba(99,102,241,0.08), transparent 28%),
+        linear-gradient(135deg, #eef2ff 0%, #ffffff 48%, #f8fafc 100%);
     }
 
     .hero-wrap {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 38px;
       align-items: center;
     }
 
@@ -102,20 +133,23 @@
       font-size: 12px;
       font-weight: 700;
       margin-bottom: 20px;
+      letter-spacing: 0.04em;
     }
 
     .hero h1 {
-      font-size: 56px;
-      line-height: 1.12;
+      font-size: 58px;
+      line-height: 1.08;
       font-weight: 900;
       color: #0f172a;
       margin-bottom: 20px;
+      letter-spacing: -0.03em;
     }
 
     .hero p {
       font-size: 18px;
       color: #475569;
       margin-bottom: 28px;
+      max-width: 620px;
     }
 
     .hero-buttons {
@@ -125,19 +159,27 @@
       margin-bottom: 28px;
     }
 
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, opacity 0.22s ease;
+    }
+
     .btn-primary {
       background: #111827;
       color: #fff;
       padding: 16px 24px;
-      border-radius: 999px;
-      font-weight: 800;
-      display: inline-block;
-      transition: 0.2s;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
     }
 
     .btn-primary:hover {
-      transform: translateY(-1px);
-      opacity: 0.92;
+      transform: translateY(-2px);
+      opacity: 0.95;
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.18);
     }
 
     .btn-secondary {
@@ -145,14 +187,12 @@
       color: #111827;
       border: 1px solid #dbe2ea;
       padding: 16px 24px;
-      border-radius: 999px;
-      font-weight: 800;
-      display: inline-block;
-      transition: 0.2s;
     }
 
     .btn-secondary:hover {
       background: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
     }
 
     .hero-points {
@@ -162,7 +202,7 @@
     }
 
     .point {
-      background: #fff;
+      background: rgba(255,255,255,0.86);
       border: 1px solid #e5e7eb;
       padding: 10px 14px;
       border-radius: 999px;
@@ -171,57 +211,36 @@
       color: #334155;
     }
 
-    .hero-card {
+    .hero-visual {
       background: #fff;
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      border-radius: 32px;
+      padding: 16px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
       border: 1px solid #eef2f7;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
     }
 
-    .hero-card h3 {
-      font-size: 20px;
-      margin-bottom: 18px;
-      color: #0f172a;
+    .hero-visual:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 70px rgba(15, 23, 42, 0.14);
     }
 
-    .hero-card ul {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      margin-bottom: 24px;
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 22px;
+      margin-bottom: 14px;
     }
 
-    .hero-card li {
-      background: #f8fafc;
-      padding: 14px 16px;
-      border-radius: 16px;
+    .hero-image-caption {
       font-size: 14px;
-      color: #334155;
-    }
-
-    .hero-card .mini-box {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      text-align: center;
-    }
-
-    .hero-card .mini-item {
-      background: #111827;
-      color: #fff;
-      border-radius: 18px;
-      padding: 18px 10px;
-    }
-
-    .hero-card .mini-item strong {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 4px;
+      color: #475569;
+      padding: 0 4px 4px;
     }
 
     section {
-      padding: 80px 0;
+      padding: 88px 0;
     }
 
     .section-head {
@@ -233,43 +252,50 @@
       font-weight: 800;
       color: #6366f1;
       margin-bottom: 10px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .section-head h2 {
-      font-size: 36px;
-      line-height: 1.2;
+      font-size: 38px;
+      line-height: 1.18;
       color: #0f172a;
       margin-bottom: 12px;
+      letter-spacing: -0.02em;
     }
 
     .section-head p {
       font-size: 16px;
       color: #64748b;
-      max-width: 900px;
+      max-width: 920px;
     }
 
-    .cards-3 {
+    .cards-3,
+    .benefit-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .card {
+    .card,
+    .benefit-card {
       background: #fff;
       border-radius: 24px;
       padding: 28px;
       border: 1px solid #edf1f5;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-      transition: 0.2s;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
+    .card:hover,
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.09);
+      border-color: #dce5ef;
     }
 
-    .card .num {
+    .card .num,
+    .benefit-card .num {
       width: 42px;
       height: 42px;
       border-radius: 50%;
@@ -282,13 +308,15 @@
       margin-bottom: 16px;
     }
 
-    .card h3 {
+    .card h3,
+    .benefit-card h3 {
       font-size: 22px;
       margin-bottom: 12px;
       color: #0f172a;
     }
 
-    .card p {
+    .card p,
+    .benefit-card p {
       color: #64748b;
       font-size: 15px;
     }
@@ -297,6 +325,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+      align-items: stretch;
     }
 
     .course-card {
@@ -306,23 +335,51 @@
       border: 1px solid #e8edf3;
       box-shadow: 0 14px 40px rgba(15, 23, 42, 0.05);
       position: relative;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      overflow: hidden;
+    }
+
+    .course-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(99,102,241,0.03), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.28s ease;
+      pointer-events: none;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.11);
+      border-color: #d9e2ec;
+    }
+
+    .course-card:hover::after {
+      opacity: 1;
     }
 
     .course-card.featured {
       border: 2px solid #111827;
-      transform: translateY(-4px);
+      box-shadow: 0 20px 44px rgba(15, 23, 42, 0.09);
+    }
+
+    .course-card.featured:hover {
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 28px 56px rgba(15, 23, 42, 0.14);
     }
 
     .popular-badge {
       position: absolute;
-      top: -12px;
-      right: 20px;
+      top: 16px;
+      right: 18px;
       background: #111827;
       color: #fff;
       font-size: 12px;
       font-weight: 800;
       padding: 8px 12px;
       border-radius: 999px;
+      box-shadow: 0 10px 18px rgba(15, 23, 42, 0.18);
     }
 
     .course-label {
@@ -340,6 +397,7 @@
       font-size: 28px;
       margin-bottom: 10px;
       color: #0f172a;
+      line-height: 1.2;
     }
 
     .course-meta {
@@ -354,6 +412,7 @@
       font-weight: 900;
       color: #111827;
       margin-bottom: 16px;
+      line-height: 1.1;
     }
 
     .course-price span {
@@ -383,6 +442,13 @@
       padding: 14px 16px;
       color: #334155;
       font-size: 14px;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .course-card:hover li {
+      transform: translateX(2px);
+      border-color: #d5dee9;
+      background: #fcfdff;
     }
 
     .course-guarantee {
@@ -392,49 +458,35 @@
       padding: 16px;
       font-size: 14px;
       font-weight: 700;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
     }
 
-    .benefit-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    .benefit-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      transition: transform 0.28s ease;
     }
 
-    .benefit-card {
-      background: #fff;
-      border-radius: 24px;
-      padding: 28px;
-      border: 1px solid #edf1f5;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-    }
-
-    .benefit-card .num {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: #111827;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
-
-    .benefit-card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: #0f172a;
-    }
-
-    .benefit-card p {
-      color: #64748b;
-      font-size: 15px;
+    .benefit-card:hover .benefit-image {
+      transform: scale(1.03);
     }
 
     .bg-dark {
       background: #0f172a;
       color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-dark::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 22%);
+      pointer-events: none;
     }
 
     .bg-dark .section-head h2,
@@ -447,6 +499,8 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
+      position: relative;
+      z-index: 1;
     }
 
     .step {
@@ -454,6 +508,13 @@
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 24px;
       padding: 24px;
+      transition: transform 0.24s ease, background 0.24s ease, border-color 0.24s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.16);
     }
 
     .step strong {
@@ -483,6 +544,12 @@
       border-radius: 20px;
       border: 1px solid #e8edf3;
       overflow: hidden;
+      transition: box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
+      border-color: #d9e2ec;
     }
 
     .faq-question {
@@ -498,6 +565,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: background 0.2s ease;
+    }
+
+    .faq-question:hover {
+      background: #fafcff;
     }
 
     .faq-answer {
@@ -511,6 +583,16 @@
       display: block;
     }
 
+    .faq-item.active .faq-question span {
+      transform: rotate(45deg);
+    }
+
+    .faq-question span {
+      transition: transform 0.2s ease;
+      font-size: 24px;
+      line-height: 1;
+    }
+
     .cta {
       padding: 88px 0;
     }
@@ -519,22 +601,39 @@
       background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
       color: #fff;
       border-radius: 32px;
-      padding: 52px 36px;
+      padding: 56px 36px;
       text-align: center;
       box-shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -120px;
+      top: -180px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 62%);
+      pointer-events: none;
     }
 
     .cta-box h2 {
       font-size: 38px;
       line-height: 1.2;
       margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
     }
 
     .cta-box p {
       color: #dbe4ee;
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto 26px;
       font-size: 16px;
+      position: relative;
+      z-index: 1;
     }
 
     footer {
@@ -544,17 +643,32 @@
       text-align: center;
     }
 
-    @media (max-width: 980px) {
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      height: 28px;
+      width: auto;
+    }
+
+    @media (max-width: 1100px) {
       .hero-wrap,
-      .cards-3,
       .course-wrap,
-      .steps,
-      .benefit-grid {
+      .cards-3,
+      .benefit-grid,
+      .steps {
         grid-template-columns: 1fr;
       }
+    }
 
+    @media (max-width: 980px) {
       .hero h1 {
-        font-size: 40px;
+        font-size: 42px;
       }
 
       .nav-links {
@@ -572,6 +686,48 @@
       .hero-card .mini-box {
         grid-template-columns: 1fr;
       }
+
+      .logo span {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 18px;
+      }
+
+      .hero {
+        padding: 52px 0 42px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .course-card,
+      .card,
+      .benefit-card,
+      .hero-visual {
+        border-radius: 22px;
+      }
+
+      .cta-box {
+        padding: 42px 24px;
+      }
+
+      .logo-img {
+        height: 34px;
+      }
+
+      .logo span {
+        font-size: 16px;
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -579,14 +735,17 @@
 
   <header>
     <div class="container nav">
-      <div class="logo">CNavi TikTok Shop Campus</div>
+      <div class="logo">
+        <img src="images/cnavi-logo.png" alt="CNavi logo" class="logo-img">
+        <span>CNavi TikTok Shop Campus</span>
+      </div>
       <nav class="nav-links">
         <a href="#about">Campusとは</a>
         <a href="#courses">コース内容</a>
         <a href="#benefits">特典・強み</a>
         <a href="#flow">流れ</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="nav-cta" style="color: white;">無料説明会に申し込む</a>
+        <a href="#contact" class="nav-cta">無料説明会に申し込む</a>
       </nav>
     </div>
   </header>
@@ -612,27 +771,10 @@
         </div>
       </div>
 
-      <div class="hero-card">
-        <h3>こんな方におすすめ</h3>
-        <ul>
-          <li>副業で収入を増やしたい</li>
-          <li>SNSを仕事につなげたい</li>
-          <li>ライブ配信で稼ぐ力をつけたい</li>
-          <li>実践で学べる環境を探している</li>
-        </ul>
-        <div class="mini-box">
-          <div class="mini-item">
-            <strong>3</strong>
-            コース構成
-          </div>
-          <div class="mini-item">
-            <strong>実践</strong>
-            重視
-          </div>
-          <div class="mini-item">
-            <strong>収益化</strong>
-            支援
-          </div>
+      <div class="hero-visual">
+        <img src="images/hero.jpg" alt="ライブ配信スタジオイメージ" class="hero-image">
+        <div class="hero-image-caption">
+          実際のライブ配信環境・商材・案件機会まで、CNaviが一気通貫で提供します。
         </div>
       </div>
     </div>
@@ -656,11 +798,13 @@
           <h3>未経験から学べる</h3>
           <p>ライブ配信の基礎、話し方、見せ方、売り方まで段階的に学べるので、初めてでも始めやすい構成です。</p>
         </div>
+
         <div class="card">
           <div class="num">02</div>
           <h3>実践で身につく</h3>
           <p>座学だけで終わらず、実際の商品を使った配信練習や販売実践を通して、現場感覚を身につけます。</p>
         </div>
+
         <div class="card">
           <div class="num">03</div>
           <h3>収益化まで見据える</h3>
@@ -676,35 +820,34 @@
         <div class="eyebrow">COURSES</div>
         <h2>コース内容</h2>
         <p>
-          START・PRO・CAREER保証の3段階構成。理論理解から実践、さらに案件機会まで、一歩ずつ収益化へつなげます。
+          START・PRO・CAREER PLAN の3段階構成。理論理解から実践、さらに案件機会まで、一歩ずつ収益化へつなげます。
         </p>
       </div>
 
       <div class="course-wrap">
         <div class="course-card">
           <div class="course-label">START</div>
-          <h3>スタートコース</h3>
+          <h3>START PLAN</h3>
           <div class="course-meta">DAY 1 / 入門向け</div>
           <div class="course-price">30,000円<span>/ 1日</span></div>
           <p>ライブコマースの基礎を短期間で学び、「まず配信できる状態」を目指す入門コースです。</p>
           <ul>
             <li>ライブコマース理論・EC基礎</li>
-            <li>TikTok Shop日本市場の構造理解</li>
-            <li>日本ルール・NGワード・コンプライアンス</li>
-            <li>DAY1にインフルエンサーとの交流会あり</li>
+            <li>TikTok Shop 日本市場の理解</li>
+            <li>日本ルール・NGワード・基本コンプライアンス</li>
+            <li>DAY1にインフルエンサー交流あり</li>
           </ul>
           <div class="course-guarantee">
-            受講特典：5時間の配信機会保証（時給1,400円）
+            保証内容：5時間の配信機会保証（時給1,400円）
           </div>
         </div>
 
-        <div class="course-card featured">
-          <div class="popular-badge">おすすめ</div>
+        <div class="course-card">
           <div class="course-label">PRO</div>
-          <h3>プロコース</h3>
+          <h3>PRO PLAN</h3>
           <div class="course-meta">DAY 1-2 / 実践強化</div>
           <div class="course-price">80,000円<span>/ 2日</span></div>
-          <p>配信スキル・販売スキルを強化し、実際に「売れる人材」になるための実践コースです。</p>
+          <p>配信スキル・販売スキルを強化し、実際に「売れる力」を身につける実践コースです。</p>
           <ul>
             <li>商品紹介・ユーザーニーズ分析</li>
             <li>信頼構築・場回し・特典誘導設計</li>
@@ -712,13 +855,14 @@
             <li>現役ライバーの助播として現場参加可能</li>
           </ul>
           <div class="course-guarantee">
-            受講特典：10時間の配信機会保証（時給1,400円）
+            保証内容：10時間の配信機会保証（時給1,400円）
           </div>
         </div>
 
-        <div class="course-card">
-          <div class="course-label">CAREER保証</div>
-          <h3>キャリア保証コース</h3>
+        <div class="course-card featured">
+          <div class="popular-badge">おすすめ</div>
+          <div class="course-label">CAREER</div>
+          <h3>CAREER PLAN</h3>
           <div class="course-meta">DAY 1-3 / 案件保証</div>
           <div class="course-price">380,000円<span>/ 3日</span></div>
           <p>本気でライブ配信を仕事にしたい方向け。実案件・商材提供・配信機会保証まで含む最上位コースです。</p>
@@ -729,7 +873,7 @@
             <li>収益化まで見据えた実践支援</li>
           </ul>
           <div class="course-guarantee">
-            受講特典：20時間の配信機会保証（時給1,400円）
+            保証内容：20時間の配信機会保証（時給1,400円）
           </div>
         </div>
       </div>
@@ -748,6 +892,7 @@
 
       <div class="benefit-grid">
         <div class="benefit-card">
+          <img src="images/goods.jpg" alt="商材提供" class="benefit-image">
           <div class="num">01</div>
           <h3>独占商材の提供</h3>
           <p>
@@ -757,6 +902,7 @@
         </div>
 
         <div class="benefit-card">
+          <img src="images/studio.jpg" alt="配信設備" class="benefit-image">
           <div class="num">02</div>
           <h3>配信環境フル提供</h3>
           <p>
@@ -766,24 +912,27 @@
         </div>
 
         <div class="benefit-card">
+          <img src="images/hero.jpg" alt="配信機会保証" class="benefit-image">
           <div class="num">03</div>
           <h3>配信機会を保証</h3>
           <p>
-            受講するだけで終わらず、実際にCNaviの現場で配信できる機会を保証。
-            STARTは5時間、PROは10時間、CAREER保証は20時間の配信機会があります。
+            受講後は実際にCNaviの現場で配信できる機会を保証。
+            STARTは5時間、PROは10時間、CAREER PLANは20時間の配信機会があります。
           </p>
         </div>
 
         <div class="benefit-card">
+          <img src="images/goods.jpg" alt="時給とインセンティブ" class="benefit-image">
           <div class="num">04</div>
           <h3>時給＋インセンティブ</h3>
           <p>
             保証配信時間はすべて時給1,400円で支給。
-            さらにライブで発生した売上はインセンティブ計算となるため、成果次第では受講費の回収も十分可能です。
+            さらにライブで発生した売上はインセンティブ計算となるため、成果次第では受講費の回収も可能です。
           </p>
         </div>
 
         <div class="benefit-card">
+          <img src="images/influencer.jpg" alt="助播参加" class="benefit-image">
           <div class="num">05</div>
           <h3>現役ライバーの現場に入れる</h3>
           <p>
@@ -793,6 +942,7 @@
         </div>
 
         <div class="benefit-card">
+          <img src="images/influencer.jpg" alt="インフルエンサー交流" class="benefit-image">
           <div class="num">06</div>
           <h3>DAY1は特別交流会あり</h3>
           <p>
@@ -818,16 +968,19 @@
           <h3>説明会申込</h3>
           <p>まずは無料説明会に参加し、プロジェクト概要や参加条件を確認します。</p>
         </div>
+
         <div class="step">
           <strong>STEP 02</strong>
           <h3>基礎学習</h3>
           <p>ライブ配信の基礎、話し方、商品理解、売り方の考え方を学びます。</p>
         </div>
+
         <div class="step">
           <strong>STEP 03</strong>
           <h3>実践参加</h3>
           <p>実際の商品を使いながら、配信の流れや販売導線を体験します。</p>
         </div>
+
         <div class="step">
           <strong>STEP 04</strong>
           <h3>案件機会へ</h3>
@@ -899,7 +1052,10 @@
 
   <footer>
     <div class="container">
-      © CNavi TikTok Shop Campus All Rights Reserved.
+      <div class="footer-inner">
+        <img src="images/cnavi-logo.png" alt="CNavi logo" class="footer-logo">
+        <span>© CNavi TikTok Shop Campus All Rights Reserved.</span>
+      </div>
     </div>
   </footer>
 
