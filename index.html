@@ -17,9 +17,13 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Segoe UI", sans-serif;
-      background: #f7f8fc;
-      color: #111;
+      background:
+        radial-gradient(circle at top left, rgba(91, 104, 255, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(0, 225, 255, 0.12), transparent 24%),
+        linear-gradient(180deg, #08111f 0%, #0b1324 46%, #0d1529 100%);
+      color: #e8eefc;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     a {
@@ -43,9 +47,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e9edf3;
+      background: rgba(7, 14, 28, 0.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .nav {
@@ -62,7 +66,7 @@
       gap: 12px;
       font-size: 22px;
       font-weight: 800;
-      color: #111827;
+      color: #ffffff;
       min-width: 0;
     }
 
@@ -70,6 +74,7 @@
       height: 42px;
       width: auto;
       flex-shrink: 0;
+      filter: drop-shadow(0 0 10px rgba(116, 137, 255, 0.28));
     }
 
     .logo span {
@@ -84,37 +89,35 @@
 
     .nav-links a {
       font-size: 14px;
-      color: #333;
-      transition: color 0.2s ease, transform 0.2s ease;
+      color: rgba(233, 240, 255, 0.82);
+      transition: color 0.22s ease, transform 0.22s ease;
     }
 
     .nav-links a:hover {
-      color: #111827;
+      color: #ffffff;
       transform: translateY(-1px);
     }
 
     .nav-cta {
-      background: #0f172a;
+      background: linear-gradient(135deg, #5d7cff 0%, #7f5cff 50%, #00c2ff 100%);
       color: #fff !important;
       padding: 12px 18px;
       border-radius: 999px;
       font-size: 14px;
       font-weight: 700;
+      box-shadow: 0 12px 28px rgba(74, 102, 255, 0.28);
       transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;
-      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
     }
 
     .nav-cta:hover {
       transform: translateY(-2px);
-      opacity: 0.95;
-      box-shadow: 0 16px 28px rgba(15, 23, 42, 0.2);
+      box-shadow: 0 18px 34px rgba(74, 102, 255, 0.36);
+      opacity: 0.98;
     }
 
     .hero {
-      padding: 72px 0 64px;
-      background:
-        radial-gradient(circle at top left, rgba(99,102,241,0.08), transparent 28%),
-        linear-gradient(135deg, #eef2ff 0%, #ffffff 48%, #f8fafc 100%);
+      padding: 76px 0 64px;
+      position: relative;
     }
 
     .hero-wrap {
@@ -126,28 +129,30 @@
 
     .badge {
       display: inline-block;
-      background: #111827;
-      color: #fff;
+      background: rgba(109, 127, 255, 0.16);
+      color: #bfd0ff;
+      border: 1px solid rgba(131, 146, 255, 0.28);
       border-radius: 999px;
       padding: 8px 14px;
       font-size: 12px;
       font-weight: 700;
       margin-bottom: 20px;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(10px);
     }
 
     .hero h1 {
-      font-size: 58px;
-      line-height: 1.08;
+      font-size: 60px;
+      line-height: 1.05;
       font-weight: 900;
-      color: #0f172a;
+      color: #ffffff;
       margin-bottom: 20px;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.035em;
     }
 
     .hero p {
       font-size: 18px;
-      color: #475569;
+      color: #aeb9d5;
       margin-bottom: 28px;
       max-width: 620px;
     }
@@ -166,33 +171,33 @@
       justify-content: center;
       border-radius: 999px;
       font-weight: 800;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, opacity 0.22s ease;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
     }
 
     .btn-primary {
-      background: #111827;
+      background: linear-gradient(135deg, #5d7cff 0%, #7f5cff 52%, #00c2ff 100%);
       color: #fff;
       padding: 16px 24px;
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
+      box-shadow: 0 14px 30px rgba(83, 106, 255, 0.3);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      opacity: 0.95;
-      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.18);
+      box-shadow: 0 22px 38px rgba(83, 106, 255, 0.38);
     }
 
     .btn-secondary {
-      background: #fff;
-      color: #111827;
-      border: 1px solid #dbe2ea;
+      background: rgba(255,255,255,0.04);
+      color: #eaf0ff;
+      border: 1px solid rgba(255,255,255,0.12);
       padding: 16px 24px;
+      backdrop-filter: blur(12px);
     }
 
     .btn-secondary:hover {
-      background: #f8fafc;
       transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.2);
     }
 
     .hero-points {
@@ -202,27 +207,29 @@
     }
 
     .point {
-      background: rgba(255,255,255,0.86);
-      border: 1px solid #e5e7eb;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
       padding: 10px 14px;
       border-radius: 999px;
       font-size: 13px;
       font-weight: 700;
-      color: #334155;
+      color: #d7e2ff;
+      backdrop-filter: blur(10px);
     }
 
     .hero-visual {
-      background: #fff;
+      background: rgba(255,255,255,0.05);
       border-radius: 32px;
       padding: 16px;
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
-      border: 1px solid #eef2f7;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(14px);
       transition: transform 0.28s ease, box-shadow 0.28s ease;
     }
 
     .hero-visual:hover {
       transform: translateY(-4px);
-      box-shadow: 0 30px 70px rgba(15, 23, 42, 0.14);
+      box-shadow: 0 34px 72px rgba(0, 0, 0, 0.34);
     }
 
     .hero-image {
@@ -235,7 +242,7 @@
 
     .hero-image-caption {
       font-size: 14px;
-      color: #475569;
+      color: #b9c6e3;
       padding: 0 4px 4px;
     }
 
@@ -250,7 +257,7 @@
     .section-head .eyebrow {
       font-size: 13px;
       font-weight: 800;
-      color: #6366f1;
+      color: #7da2ff;
       margin-bottom: 10px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -259,15 +266,23 @@
     .section-head h2 {
       font-size: 38px;
       line-height: 1.18;
-      color: #0f172a;
+      color: #ffffff;
       margin-bottom: 12px;
       letter-spacing: -0.02em;
     }
 
     .section-head p {
       font-size: 16px;
-      color: #64748b;
+      color: #aab8d5;
       max-width: 920px;
+    }
+
+    .glass-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 32px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+      backdrop-filter: blur(14px);
     }
 
     .cards-3,
@@ -279,19 +294,20 @@
 
     .card,
     .benefit-card {
-      background: #fff;
+      background: rgba(255,255,255,0.05);
       border-radius: 24px;
       padding: 28px;
-      border: 1px solid #edf1f5;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(12px);
       transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
     }
 
     .card:hover,
     .benefit-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.09);
-      border-color: #dce5ef;
+      box-shadow: 0 20px 38px rgba(0, 0, 0, 0.24);
+      border-color: rgba(125, 154, 255, 0.3);
     }
 
     .card .num,
@@ -299,26 +315,90 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: #111827;
+      background: linear-gradient(135deg, #5d7cff 0%, #7f5cff 100%);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
       margin-bottom: 16px;
+      box-shadow: 0 10px 24px rgba(89, 107, 255, 0.28);
     }
 
     .card h3,
     .benefit-card h3 {
       font-size: 22px;
       margin-bottom: 12px;
-      color: #0f172a;
+      color: #ffffff;
     }
 
     .card p,
     .benefit-card p {
-      color: #64748b;
+      color: #aeb9d5;
       font-size: 15px;
+    }
+
+    .recommend-wrap {
+      padding: 28px;
+    }
+
+    .recommend-title {
+      font-size: 26px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 26px;
+    }
+
+    .recommend-list {
+      list-style: none;
+      display: grid;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .recommend-list li {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #dbe5ff;
+      border-radius: 18px;
+      padding: 18px 20px;
+      font-size: 15px;
+      transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+    }
+
+    .recommend-list li:hover {
+      transform: translateX(4px);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(125, 154, 255, 0.24);
+    }
+
+    .recommend-mini-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .recommend-mini-item {
+      background: linear-gradient(180deg, #0c1832 0%, #091225 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 24px 12px;
+      text-align: center;
+      border: 1px solid rgba(120, 140, 255, 0.16);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 14px 24px rgba(0, 0, 0, 0.22);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .recommend-mini-item:hover {
+      transform: translateY(-6px);
+      border-color: rgba(120, 140, 255, 0.34);
+      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.28);
+    }
+
+    .recommend-mini-item strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 6px;
     }
 
     .course-wrap {
@@ -329,80 +409,82 @@
     }
 
     .course-card {
-      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
       border-radius: 28px;
       padding: 32px;
-      border: 1px solid #e8edf3;
-      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
       position: relative;
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
       overflow: hidden;
+      backdrop-filter: blur(14px);
     }
 
-    .course-card::after {
+    .course-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(99,102,241,0.03), transparent 40%);
+      background: linear-gradient(180deg, rgba(96, 123, 255, 0.1), transparent 36%);
       opacity: 0;
       transition: opacity 0.28s ease;
       pointer-events: none;
     }
 
     .course-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.11);
-      border-color: #d9e2ec;
+      transform: translateY(-10px);
+      box-shadow: 0 26px 54px rgba(0, 0, 0, 0.28);
+      border-color: rgba(121, 145, 255, 0.34);
     }
 
-    .course-card:hover::after {
+    .course-card:hover::before {
       opacity: 1;
     }
 
     .course-card.featured {
-      border: 2px solid #111827;
-      box-shadow: 0 20px 44px rgba(15, 23, 42, 0.09);
+      border: 2px solid rgba(120, 140, 255, 0.5);
+      box-shadow: 0 24px 60px rgba(62, 95, 255, 0.18);
     }
 
     .course-card.featured:hover {
-      transform: translateY(-10px) scale(1.01);
-      box-shadow: 0 28px 56px rgba(15, 23, 42, 0.14);
+      transform: translateY(-12px) scale(1.015);
+      box-shadow: 0 34px 72px rgba(62, 95, 255, 0.22);
     }
 
     .popular-badge {
       position: absolute;
       top: 16px;
       right: 18px;
-      background: #111827;
+      background: linear-gradient(135deg, #5d7cff 0%, #7f5cff 100%);
       color: #fff;
       font-size: 12px;
       font-weight: 800;
       padding: 8px 12px;
       border-radius: 999px;
-      box-shadow: 0 10px 18px rgba(15, 23, 42, 0.18);
+      box-shadow: 0 12px 22px rgba(77, 102, 255, 0.34);
     }
 
     .course-label {
       display: inline-block;
-      background: #e0e7ff;
-      color: #3730a3;
+      background: rgba(96, 112, 255, 0.16);
+      color: #bfd0ff;
       font-size: 12px;
       font-weight: 800;
       padding: 8px 12px;
       border-radius: 999px;
       margin-bottom: 16px;
+      border: 1px solid rgba(125, 141, 255, 0.2);
     }
 
     .course-card h3 {
       font-size: 28px;
       margin-bottom: 10px;
-      color: #0f172a;
+      color: #ffffff;
       line-height: 1.2;
     }
 
     .course-meta {
       font-size: 14px;
-      color: #475569;
+      color: #9fb0d6;
       margin-bottom: 14px;
       font-weight: 700;
     }
@@ -410,21 +492,21 @@
     .course-price {
       font-size: 34px;
       font-weight: 900;
-      color: #111827;
+      color: #ffffff;
       margin-bottom: 16px;
       line-height: 1.1;
     }
 
     .course-price span {
       font-size: 15px;
-      color: #64748b;
+      color: #93a4cb;
       font-weight: 600;
       margin-left: 6px;
     }
 
     .course-card p {
       font-size: 15px;
-      color: #64748b;
+      color: #aeb9d5;
       margin-bottom: 18px;
     }
 
@@ -436,29 +518,29 @@
     }
 
     .course-card li {
-      background: #fff;
-      border: 1px solid #e8edf3;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.06);
       border-radius: 16px;
       padding: 14px 16px;
-      color: #334155;
+      color: #d4def8;
       font-size: 14px;
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
     .course-card:hover li {
-      transform: translateX(2px);
-      border-color: #d5dee9;
-      background: #fcfdff;
+      transform: translateX(3px);
+      border-color: rgba(121, 145, 255, 0.24);
+      background: rgba(255,255,255,0.07);
     }
 
     .course-guarantee {
-      background: #111827;
+      background: linear-gradient(135deg, #132345 0%, #0c1630 100%);
       color: #fff;
       border-radius: 18px;
       padding: 16px;
       font-size: 14px;
       font-weight: 700;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+      border: 1px solid rgba(116, 136, 255, 0.16);
     }
 
     .benefit-image {
@@ -467,44 +549,32 @@
       object-fit: cover;
       border-radius: 18px;
       margin-bottom: 18px;
-      transition: transform 0.28s ease;
+      transition: transform 0.28s ease, filter 0.28s ease;
+      filter: saturate(1.02);
     }
 
     .benefit-card:hover .benefit-image {
       transform: scale(1.03);
+      filter: saturate(1.08);
     }
 
-    .bg-dark {
-      background: #0f172a;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bg-dark::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 22%);
-      pointer-events: none;
-    }
-
-    .bg-dark .section-head h2,
-    .bg-dark .section-head p,
-    .bg-dark .section-head .eyebrow {
-      color: #fff;
+    .flow-wrap {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 32px;
+      padding: 30px;
+      box-shadow: 0 24px 50px rgba(0,0,0,0.24);
+      backdrop-filter: blur(12px);
     }
 
     .steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      position: relative;
-      z-index: 1;
     }
 
     .step {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 24px;
       padding: 24px;
@@ -513,25 +583,26 @@
 
     .step:hover {
       transform: translateY(-6px);
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(121, 145, 255, 0.22);
     }
 
     .step strong {
       display: block;
       font-size: 14px;
       margin-bottom: 12px;
-      color: #cbd5e1;
+      color: #98acdb;
     }
 
     .step h3 {
       font-size: 20px;
       margin-bottom: 10px;
+      color: #ffffff;
     }
 
     .step p {
       font-size: 14px;
-      color: #e2e8f0;
+      color: #c5d1ec;
     }
 
     .faq {
@@ -540,16 +611,17 @@
     }
 
     .faq-item {
-      background: #fff;
+      background: rgba(255,255,255,0.05);
       border-radius: 20px;
-      border: 1px solid #e8edf3;
+      border: 1px solid rgba(255,255,255,0.08);
       overflow: hidden;
+      backdrop-filter: blur(12px);
       transition: box-shadow 0.22s ease, border-color 0.22s ease;
     }
 
     .faq-item:hover {
-      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
-      border-color: #d9e2ec;
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+      border-color: rgba(121, 145, 255, 0.24);
     }
 
     .faq-question {
@@ -560,22 +632,17 @@
       padding: 22px 24px;
       font-size: 17px;
       font-weight: 800;
-      color: #0f172a;
+      color: #ffffff;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: background 0.2s ease;
-    }
-
-    .faq-question:hover {
-      background: #fafcff;
     }
 
     .faq-answer {
       display: none;
       padding: 0 24px 22px;
-      color: #64748b;
+      color: #b6c4e2;
       font-size: 15px;
     }
 
@@ -598,25 +665,17 @@
     }
 
     .cta-box {
-      background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+      background:
+        radial-gradient(circle at top right, rgba(0, 225, 255, 0.16), transparent 26%),
+        linear-gradient(135deg, #111d3a 0%, #161b3d 52%, #0f1b34 100%);
       color: #fff;
       border-radius: 32px;
       padding: 56px 36px;
       text-align: center;
-      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255,255,255,0.08);
       position: relative;
       overflow: hidden;
-    }
-
-    .cta-box::before {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      right: -120px;
-      top: -180px;
-      background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 62%);
-      pointer-events: none;
     }
 
     .cta-box h2 {
@@ -628,7 +687,7 @@
     }
 
     .cta-box p {
-      color: #dbe4ee;
+      color: #d7e2ff;
       max-width: 720px;
       margin: 0 auto 26px;
       font-size: 16px;
@@ -638,7 +697,7 @@
 
     footer {
       padding: 28px 0 40px;
-      color: #64748b;
+      color: #a8b7d6;
       font-size: 14px;
       text-align: center;
     }
@@ -654,6 +713,7 @@
     .footer-logo {
       height: 28px;
       width: auto;
+      filter: drop-shadow(0 0 8px rgba(116, 137, 255, 0.22));
     }
 
     @media (max-width: 1100px) {
@@ -683,7 +743,7 @@
         font-size: 30px;
       }
 
-      .hero-card .mini-box {
+      .recommend-mini-box {
         grid-template-columns: 1fr;
       }
 
@@ -712,7 +772,9 @@
       .course-card,
       .card,
       .benefit-card,
-      .hero-visual {
+      .hero-visual,
+      .flow-wrap,
+      .glass-block {
         border-radius: 22px;
       }
 
@@ -727,6 +789,10 @@
       .logo span {
         font-size: 16px;
         white-space: normal;
+      }
+
+      .recommend-wrap {
+        padding: 22px;
       }
     }
   </style>
@@ -775,6 +841,34 @@
         <img src="images/hero.jpg" alt="ライブ配信スタジオイメージ" class="hero-image">
         <div class="hero-image-caption">
           実際のライブ配信環境・商材・案件機会まで、CNaviが一気通貫で提供します。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="glass-block recommend-wrap">
+        <h2 class="recommend-title">こんな方におすすめ</h2>
+        <ul class="recommend-list">
+          <li>副業で収入を増やしたい</li>
+          <li>SNSを仕事につなげたい</li>
+          <li>ライブ配信で稼ぐ力をつけたい</li>
+          <li>実践で学べる環境を探している</li>
+        </ul>
+        <div class="recommend-mini-box">
+          <div class="recommend-mini-item">
+            <strong>3</strong>
+            コース構成
+          </div>
+          <div class="recommend-mini-item">
+            <strong>実践</strong>
+            重視
+          </div>
+          <div class="recommend-mini-item">
+            <strong>収益化</strong>
+            支援
+          </div>
         </div>
       </div>
     </div>
@@ -954,37 +1048,39 @@
     </div>
   </section>
 
-  <section class="bg-dark" id="flow">
+  <section id="flow">
     <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">FLOW</div>
-        <h2>参加から実践までの流れ</h2>
-        <p>エントリーからスタートし、基礎学習、実践参加、そして案件機会へ。わかりやすいステップで進めます。</p>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <strong>STEP 01</strong>
-          <h3>説明会申込</h3>
-          <p>まずは無料説明会に参加し、プロジェクト概要や参加条件を確認します。</p>
+      <div class="flow-wrap">
+        <div class="section-head">
+          <div class="eyebrow">FLOW</div>
+          <h2>参加から実践までの流れ</h2>
+          <p>エントリーからスタートし、基礎学習、実践参加、そして案件機会へ。わかりやすいステップで進めます。</p>
         </div>
 
-        <div class="step">
-          <strong>STEP 02</strong>
-          <h3>基礎学習</h3>
-          <p>ライブ配信の基礎、話し方、商品理解、売り方の考え方を学びます。</p>
-        </div>
+        <div class="steps">
+          <div class="step">
+            <strong>STEP 01</strong>
+            <h3>説明会申込</h3>
+            <p>まずは無料説明会に参加し、プロジェクト概要や参加条件を確認します。</p>
+          </div>
 
-        <div class="step">
-          <strong>STEP 03</strong>
-          <h3>実践参加</h3>
-          <p>実際の商品を使いながら、配信の流れや販売導線を体験します。</p>
-        </div>
+          <div class="step">
+            <strong>STEP 02</strong>
+            <h3>基礎学習</h3>
+            <p>ライブ配信の基礎、話し方、商品理解、売り方の考え方を学びます。</p>
+          </div>
 
-        <div class="step">
-          <strong>STEP 04</strong>
-          <h3>案件機会へ</h3>
-          <p>一定基準を満たした方には、実際の販売案件・継続機会につながる可能性があります。</p>
+          <div class="step">
+            <strong>STEP 03</strong>
+            <h3>実践参加</h3>
+            <p>実際の商品を使いながら、配信の流れや販売導線を体験します。</p>
+          </div>
+
+          <div class="step">
+            <strong>STEP 04</strong>
+            <h3>案件機会へ</h3>
+            <p>一定基準を満たした方には、実際の販売案件・継続機会につながる可能性があります。</p>
+          </div>
         </div>
       </div>
     </div>
